@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lamp</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="control_panel">
+      <div class="onOffSwitch">
+        <input type="radio" id="on" name="switch" value="on">
+        <label for="on">On</label>
+        <input type="radio" id="off" name="switch" value="off">
+        <label for="off">Off</label>
+      </div>
+      <div class="dropdown">
+        <label for="device">Choose the Device</label>
+        <select name="device" id="device">
+          <option selected disabled hidden></option>
+          <option value="tmrState">Kata</option>
+          <option value="myState">Whp</option>
+        </select>
+      </div>
+      <div class="dropdown">
+        <label for="choose mode">Choose Mode</label>
+        <select name="modes" id="modes">
+          <option value="LightWave">Light Wave</option>
+          <option value="Pulse">Pulse</option>
+          <option value="Static">Static</option>
+          <option value="Custom">Custom</option>
+        </select>
+      </div>
+      <div class="dropdown">
+        <label for="choose color">Choose Color</label>
+        <select name="colors" id="colors">
+          <option value="Red">Red</option>
+          <option value="Yellow">Yellow</option>
+          <option value="DarkGreen">Green</option>
+          <option value="SkyBlue">Sky Blue</option>
+          <option value="Navy">Navy</option>
+          <option value="Pink">Pink</option>
+          <option value="Magenta">Magenta</option>
+        </select>
+      </div>
+
+      <div id="led_matrix">
+        <div class="led_matrix_row">
+          <div class="led_matrix_cell">
+            <button id="led_20" class="led_matrix_button"></button>
+          </div>
+          <div class="led_matrix_cell">
+            <button id="led_19" class="led_matrix_button"></button>
+          </div>
+          <div class="led_matrix_cell">
+            <button id="led_10" class="led_matrix_button"></button>
+          </div>
+          <div class="led_matrix_cell">
+            <button id="led_9" class="led_matrix_button"></button>
+          </div>
+          <div class="led_matrix_cell">
+            <button id="led_0" class="led_matrix_button"></button>
+          </div>
+        </div>
+        <div class="led_matrix_row">
+          <div class="led_matrix_cell">
+            <button id="led_21" class="led_matrix_button"></button>
+          </div>
+          <div class="led_matrix_cell">
+            <button id="led_18" class="led_matrix_button"></button>
+          </div>
+          <div class="led_matrix_cell">
+            <button id="led_11" class="led_matrix_button"></button>
+          </div>
+          <div class="led_matrix_cell">
+            <button id="led_8" class="led_matrix_button"></button>
+          </div>
+          <div class="led_matrix_cell">
+            <button id="led_1" class="led_matrix_button"></button>
+          </div>
+        </div>
+        <div class="led_matrix_row">
+          <div class="led_matrix_cell">
+            <button id="led_22" class="led_matrix_button"></button>
+          </div>
+          <div class="led_matrix_cell">
+            <button id="led_17" class="led_matrix_button"></button>
+          </div>
+          <div class="led_matrix_cell">
+            <button id="led_12" class="led_matrix_button"></button>
+          </div>
+          <div class="led_matrix_cell">
+            <button id="led_7" class="led_matrix_button"></button>
+          </div>
+          <div class="led_matrix_cell">
+            <button id="led_2" class="led_matrix_button"></button>
+          </div>
+        </div>
+        <div class="led_matrix_row">
+          <div class="led_matrix_cell">
+            <button id="led_23" class="led_matrix_button"></button>
+          </div>
+          <div class="led_matrix_cell">
+            <button id="led_16" class="led_matrix_button"></button>
+          </div>
+          <div class="led_matrix_cell">
+            <button id="led_13" class="led_matrix_button"></button>
+          </div>
+          <div class="led_matrix_cell">
+            <button id="led_6" class="led_matrix_button"></button>
+          </div>
+          <div class="led_matrix_cell">
+            <button id="led_3" class="led_matrix_button"></button>
+          </div>
+        </div>
+        <div class="led_matrix_row">
+          <div class="led_matrix_cell">
+            <button id="led_24" class="led_matrix_button"></button>
+          </div>
+          <div class="led_matrix_cell">
+            <button id="led_15" class="led_matrix_button"></button>
+          </div>
+          <div class="led_matrix_cell">
+            <button id="led_14" class="led_matrix_button"></button>
+          </div>
+          <div class="led_matrix_cell">
+            <button id="led_5" class="led_matrix_button"></button>
+          </div>
+          <div class="led_matrix_cell">
+            <button id="led_4" class="led_matrix_button"></button>
+          </div>
+        </div>
+      </div>
+      <input id="brightness_slider" type="range" min="1" max="60" value="20" />
+      <lable for="brightness">Brightness<lable>
+    </>
+    <script defer type="text/javascript" src="app.js"></script>
+  </body>
+</html>
