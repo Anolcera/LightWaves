@@ -187,6 +187,22 @@ const putOnOffState = (val) => {
   }
 };
 
+const putChangeData = (val) => {
+
+  let data = JSON.stringify(val);
+  fetch(
+    'https://light-waves-tmr-default-rtdb.firebaseio.com/changeCode.json',
+    {
+      method: 'PUT',
+      body: data,
+    }
+  )
+    .then((res) => {})
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
 const showLeds = () => {
   let ledMatrix = document.querySelector('#led_matrix');
   let controlPanel = document.querySelector('.control_panel');
@@ -206,13 +222,34 @@ const showLeds = () => {
 };
 
 const handleEvent = (event) => {
-  if (event.target.id === 'colors') putColorData(event.target.value);
-  else if (event.target.id === 'modes') putModeData(event.target.value);
-  else if (event.target.id === 'brightness_slider')
+  if (event.target.id === 'colors') {
+    putColorData(event.target.value);
+    putChangeData('c');
+  
+  }else if (event.target.id === 'modes'){
+    putModeData(event.target.value);
+    putChangeData('m');
+
+  }else if (event.target.id === 'brightness_slider'){
     putBrightnessData(event.target.value);
-  else if (event.target.id === 'device') getDeviceType(event.target.value);
-  else if (event.target.name === 'switch') putOnOffState(event.target.value);
-  else putLedData(event.target.id);
+    putChangeData('b');
+
+  }else if (event.target.id === 'device'){ 
+    getDeviceType(event.target.value); 
+  
+  }else if (event.target.name === 'switch'){ 
+    putOnOffState(event.target.value);
+    if(device.value == "tmrState"){
+      putChangeData('ot');
+    }else{
+      putChangeData('om')
+    }
+    
+  
+  }else{
+     putLedData(event.target.id);
+     putChangeData('l');
+  }
 };
 
 device.addEventListener('change', handleEvent);
